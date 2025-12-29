@@ -1,0 +1,78 @@
+RSIP 12218 aaln/4@CPG2 MGCP 1.0 NCS 1.0
+RM: restart
+
+400 12218 OK
+AUEP 10506 aaln/1@cpg2 MGCP 1.0 NCS 1.0
+F: RM
+
+200 10506 OK
+NTFY 12219 aaln/1@CPG2 MGCP 1.0 NCS 1.0
+X: ABCD10456
+O: hd
+
+200 12219 OK
+RQNT 10508 aaln/1@cpg2 MGCP 1.0 NCS 1.0
+R: hu
+X: ABCD10508
+RQNT 10509 aaln/1@cpg2 MGCP 1.0 NCS 1.0
+R: hu, hf, [0-9#*T](D), oc
+X: ABCD10509
+D: ([2-9]11|*xx|xx#|[1-9]*|9xxx|[1-9]xxxxxxx|01xxxxxxxxxx|00x.T|101xxxx00x.T|101xxxx020T|090T|020T)
+S: dl
+
+200 10508 OK
+200 10509 OK
+RSIP 12220 aaln/3@CPG2 MGCP 1.0 NCS 1.0
+RM: restart
+
+400 12220 OK
+
+RSIP 12221 aaln/4@CPG2 MGCP 1.0 NCS 1.0
+RM: restart
+
+400 12221 OK
+
+NTFY 12222 aaln/1@CPG2 MGCP 1.0 NCS 1.0
+X: ABCD10509
+O: 9,0,0,5
+
+200 12222 OK
+RQNT 10510 aaln/1@cpg2 MGCP 1.0 NCS 1.0
+R: hu, hf
+X: ABCD10510
+
+200 10510 OK
+
+CRCX 10511 aaln/1@cpg2 MGCP 1.0 NCS 1.0
+C: ABCD000068
+L: p:20, a:PCMA, e:on, s:on
+M: sendrecv
+
+v=0
+c=IN IP4 200.57.7.196
+m=audio 40362 RTP/AVP 0
+
+200 10511 OK
+I: 7c
+
+v=0
+c=IN IP4 200.57.7.202
+m=audio 30000 RTP/AVP 8
+
+RQNT 10512 aaln/1@cpg2 MGCP 1.0 NCS 1.0
+R: hu, hf, [0-9#*](N)
+X: ABCD10512
+
+200 10512 OK
+
+RQNT 10513 aaln/1@cpg2 MGCP 1.0 NCS 1.0
+R: hu, hf
+X: ABCD10513
+S: rt
+
+200 10513 OK
+
+AUEP 10515 aaln/1@cpg2 MGCP 1.0 NCS 1.0
+F: RM
+
+200 10515 OK
